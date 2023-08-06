@@ -18,7 +18,8 @@ const Intro = () => {
             transition={{ type: "tween", duration: 0.2 }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGhvdG98ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+            src='/kiran.JPG'
+              // src="https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGhvdG98ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
               alt="Logo"
               height={192}
               width={192}
@@ -42,17 +43,19 @@ const Intro = () => {
           </motion.span>
         </div>
       </div>
-      <motion.p
+      <motion.h1
         className="mb-10 mt-4 px-4 text-xl font-medium !leading-[1.5] sm:text-3xl "
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Ricardo.</span> I'm a{" "}
-        <span className="font-bold">Full-stack developer</span> with{" "}
-        <span className="font-bold">8 years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My focus is
+        <span className="font-bold">Hello, I'm Kiran.</span> I'm a{" "}
+        <span className="font-bold">Full-stack developer.</span> {" "}
+        with{" "}
+        <span className="font-bold">8 years</span> of experience. 
+        I enjoy
+        building <span className="italic">web sites &  web apps</span>. My focus is
         <span className="underline"> React (Next.js)</span>.
-      </motion.p>
+      </motion.h1>
       <motion.div
         className="flex flex-col sm:flex-row gap-4 px-4 text-lg font-medium justify-center items-center "
         initial={{ opacity: 0, y: 100 }}

@@ -1,11 +1,16 @@
+import About from "./component/About";
 import Intro from "./component/Intro";
-import SectionDivider from "./component/SectionDivider";
+import Projects from "./component/Projects";
+import SectionDivider from "./component/Section/SectionDivider";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
       <SectionDivider/>
+      <About/>
+      {/* <SectionDivider/> */}
+      <Projects/>
     </main>
   );
 }
