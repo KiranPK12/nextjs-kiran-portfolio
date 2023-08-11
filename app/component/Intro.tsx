@@ -48,7 +48,7 @@ const Intro = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Kiran.</span> I'm a{" "}
+        <span className="font-bold">Hello, I&apos;m Kiran.</span> I&apos;m a{" "}
         <span className="font-bold">Full-stack developer.</span> {" "}
         with{" "}
         <span className="font-bold">8 years</span> of experience. 
@@ -81,21 +81,22 @@ const Intro = () => {
           <HiDownload className="group-hover:translate-y-1 opacity-80 transition" />
         </a>
 
-        <a
-          href="#"
-          target="_blank"
-          className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
-        >
-          <BsLinkedin />
-        </a>
-
-        <a
-          href="#"
-          target="_blank"
-          className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 text-[1.35rem] outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
-        >
-          <FaGithubSquare />
-        </a>
+        <div className="flex gap-4">
+          <a
+            href="#"
+            target="_blank"
+            className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
+          >
+            <BsLinkedin />
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 text-[1.35rem] outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
+          >
+            <FaGithubSquare />
+          </a>
+        </div>
       </motion.div>
     </section>
   );

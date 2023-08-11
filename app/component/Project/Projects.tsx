@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionHeader from './Section/SectionHeader'
+import SectionHeader from '../Section/SectionHeader'
 import { projectsData } from '@/lib/data'
 import ProjectCard from './ProjectCard'
 
