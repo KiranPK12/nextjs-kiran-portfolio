@@ -6,10 +6,19 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { useSectionInView } from "@/lib/hooks";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 const Intro = () => {
+  const { ref } = useSectionInView("Home");
+  const { setTimeOfLastClick, setActiveSelection } = useActiveSectionContext();
+
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0">
+    <section
+      ref={ref}
+      id="home"
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-28"
+    >
       <div className="flex items-center justify-center">
         <div className="relative mb-12">
           <motion.div
@@ -18,8 +27,7 @@ const Intro = () => {
             transition={{ type: "tween", duration: 0.2 }}
           >
             <Image
-            src='/kiran.JPG'
-              // src="https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGhvdG98ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+              src="/kiran.JPG"
               alt="Logo"
               height={192}
               width={192}
@@ -49,11 +57,10 @@ const Intro = () => {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hello, I&apos;m Kiran.</span> I&apos;m a{" "}
-        <span className="font-bold">Full-stack developer.</span> {" "}
-        with{" "}
-        <span className="font-bold">8 years</span> of experience. 
-        I enjoy
-        building <span className="italic">web sites &  web apps</span>. My focus is
+        <span className="font-bold">Full-stack developer.</span> with{" "}
+        <span className="font-bold">8 years</span> of experience. I enjoy
+        building <span className="italic">web sites & web apps</span>. My focus
+        is
         <span className="underline"> React (Next.js)</span>.
       </motion.h1>
       <motion.div
@@ -67,6 +74,11 @@ const Intro = () => {
         <Link
           href="#contact"
           className=" group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          onClick={() => {
+            setTimeOfLastClick(Date.now());
+            setActiveSelection('Contact')
+            
+          }}
         >
           Contact Me here{" "}
           <BsArrowRight className="opacity-60 group-hover:translate-x-2" />

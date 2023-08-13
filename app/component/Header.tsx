@@ -1,8 +1,11 @@
 "use client";
+import { useActiveSectionContext } from "@/context/active-section-context";
 import { links } from "@/lib/data";
 import { motion } from "framer-motion";
 import Link from "next/link";
 const Header = () => {
+  const { activeSelection, setActiveSelection, setTimeOfLastClick } =
+    useActiveSectionContext();
   return (
     <header className="z-[999] relative ">
       <motion.div
@@ -15,15 +18,32 @@ const Header = () => {
           {links.map((link) => (
             <motion.li
               key={link.hash}
-              className="h-3/4 flex items-center justify-center "
+              className="h-3/4 flex items-center justify-center relative "
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
               <Link
                 href={link.hash}
-                className="flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition "
+                className={`flex w-full items-center justify-center px-3 py-3 transition ${
+                  activeSelection === link.name ? "text-gray-950" : ""
+                } `}
+                onClick={() => {
+                  setActiveSelection(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name}
+                {link.name === activeSelection && (
+                  <motion.span
+                    className="bg-gray-200 rounded-full absolute inset-0 -z-10"
+                    layoutId="activeSelection"
+                    transition={{
+                      type: "spring",
+                      stiffness: 380,
+                      damping: 30,
+                    }}
+                  ></motion.span>
+                )}
               </Link>
             </motion.li>
           ))}

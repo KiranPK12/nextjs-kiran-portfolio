@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "./component/Header";
+import ActiveSelectionContextProvider from "@/context/active-section-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +17,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-gray-50 text-gray-950 relative overflow-x-hidden pt-28 sm:pt-32`}>
+    <html
+      lang="en"
+      className="overflow-x-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] !scroll-smooth"
+    >
+      <body
+        className={`${inter.className} bg-gray-50 text-gray-950 relative overflow-x-hidden pt-28 sm:pt-32`}
+      >
         <div className="bg-[#fbe2e3] absolute top-[-6rem] right-[-3rem] h-[31.25rem] w-[31.25rem] -z-10 blur-[10rem] rounded-full sm:w-[68.75rem]"></div>
         <div className="bg-[#dbd7fb] absolute top-[-1rem] left-[-28rem] h-[31.25rem] w-[50rem] -z-10 rounded-full blur-[10rem]  sm:w-[68.75rem] md:left-[-35rem]"></div>
-        <Header/>
-        {children}
+        <ActiveSelectionContextProvider>
+          <Header />
+          {children}
+        </ActiveSelectionContextProvider>
       </body>
     </html>
   );

@@ -1,12 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import SectionHeader from "./Section/SectionHeader";
-import { motion } from "framer-motion";
+import { invariant, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { useSectionInView } from "@/lib/hooks";
 
 const About = () => {
+  const { ref } = useSectionInView("About", 0.6);
+
   return (
     <motion.section
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40"
+      ref={ref}
+      id="about"
+      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -33,12 +40,12 @@ const About = () => {
         developer.
       </p>
       <p>
-        <span className="italic">When I&apos;m not coding</span>, I enjoy playing
-        video games, watching movies, and playing with my dog. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
-        <span className="font-medium">history and philosophy</span>. I&apos;m also
-        learning how to play the guitar.
+        <span className="italic">When I&apos;m not coding</span>, I enjoy
+        playing video games, watching movies, and playing with my dog. I also
+        enjoy <span className="font-medium">learning new things</span>. I am
+        currently learning about{" "}
+        <span className="font-medium">history and philosophy</span>. I&apos;m
+        also learning how to play the guitar.
       </p>
     </motion.section>
   );
