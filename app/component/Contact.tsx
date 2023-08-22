@@ -11,7 +11,7 @@ import axios from "axios";
 
 const contactFormSchema = z.object({
   email: z.string().email(),
-  message: z.string().max(200),
+  message: z.string().max(200).min(10,"Minimum 10 Characters Required"),
 });
 
 const Contact = () => {
@@ -19,13 +19,12 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({ resolver: zodResolver(contactFormSchema) });
 
   const onSubmit = async (data: FieldValues) =>
     await axios.post("/api/mail", data).then(function (response) {
       console.log(response);
-      console.log(data);
     });
   return (
     <motion.section
@@ -42,18 +41,18 @@ const Contact = () => {
       }}
     >
       <SectionHeader label="Contact Me" />
-      <p className="text-gray-700 -mt-4">
+      <p className="text-gray-700 -mt-4 dark:text-white/80">
         Please Contact me directly at{" "}
         <a className="underline" href="mailto:kiranpadma2003@gmail.com">
           kiranpadma2003@gmail.com
         </a>{" "}
         or through this form.
       </p>
-      <form className="mt-10 flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+      <form className="mt-10 flex flex-col dark:text-black" onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register("email")}
           placeholder="Your Email"
-          className="h-14 rounded-lg border border-black/10 px-4"
+          className="h-14 rounded-lg border border-black/10 px-4 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all"
         />
         {errors.email && (
           <p className="text-red-500 text-left pt-3 pl-5">
@@ -61,7 +60,7 @@ const Contact = () => {
           </p>
         )}
         <textarea
-          className="h-52 my-3 rounded-lg border border-black/10 p-4"
+          className="h-52 my-3 rounded-lg border border-black/10 p-4 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all"
           {...register("message")}
           placeholder="Your Message"
         />
@@ -73,7 +72,8 @@ const Contact = () => {
 
         <button
           type="submit"
-          className=" group h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all flex items-center justify-center gap-3 hover:scale-110 active:scale-105"
+          disabled={isSubmitting}
+          className=" group h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all flex items-center justify-center gap-3 hover:scale-110 active:scale-105 dark:bg-white dark:bg-opacity-10"
         >
           Submit{" "}
           <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />

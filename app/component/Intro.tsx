@@ -85,7 +85,7 @@ const Intro = () => {
         </Link>
 
         <a
-          className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
+          className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60"
           href="/CV.pdf"
           download={true}
         >
@@ -97,14 +97,14 @@ const Intro = () => {
           <a
             href="#"
             target="_blank"
-            className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
+            className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60"
           >
             <BsLinkedin />
           </a>
           <a
             href="#"
             target="_blank"
-            className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 text-[1.35rem] outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
+            className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 text-[1.35rem] outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60"
           >
             <FaGithubSquare />
           </a>
