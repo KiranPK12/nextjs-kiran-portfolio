@@ -3,9 +3,17 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { BsArrowRight, BsLinkedin, BsGit } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
+import { SiNextdotjs } from "react-icons/si";
 import { FaGithubSquare } from "react-icons/fa";
+import {
+  BiLogoTailwindCss,
+  BiLogoMongodb,
+  BiLogoReact,
+  BiLogoTypescript,
+  BiLogoPostgresql,
+} from "react-icons/bi";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
@@ -57,14 +65,31 @@ const Intro = () => {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hello, I&apos;m Kiran.</span> I&apos;m a{" "}
-        <span className="font-bold">Full-stack developer.</span> with{" "}
-        <span className="font-bold">8 years</span> of experience. I enjoy
-        building <span className="italic">web sites & web apps</span>. My focus
+        <span className="font-bold">Full-stack developer.</span>{" "}
+        <span className="font-bold"></span> I enjoy building{" "}
+        <span className="italic">web sites & web applications</span>. My focus
         is
         <span className="underline"> React (Next.js)</span>.
       </motion.h1>
       <motion.div
-        className="flex flex-col sm:flex-row gap-4 px-4 text-lg font-medium justify-center items-center "
+        className="flex text-center items-center justify-evenly my-16"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.1,
+        }}
+      >
+        <p className="font-semibold tracking-wider ">Tech Stack :</p>
+        <BiLogoReact className="text-5xl text-[#61dbfb] hover:scale-[1.15] transition" />
+        <BiLogoTailwindCss className="text-5xl text-[#3490dc] hover:scale-[1.15] transition" />
+        <SiNextdotjs className="text-5xl dark:text-white hover:scale-[1.15]  transition" />
+        <BiLogoTypescript className="text-5xl text-[#007acc] hover:scale-[1.15] transition" />
+        <BiLogoMongodb className="text-5xl text-[#589636] hover:scale-[1.15] transition" />
+        <BsGit className="text-5xl text-[#f34f29] hover:scale-[1.15] transition" />
+        <BiLogoPostgresql className="text-5xl text-[#0064a5] hover:scale-[1.15] transition" />
+      </motion.div>
+      <motion.div
+        className="flex flex-col sm:flex-row gap-4 px-4 text-lg font-medium justify-center items-center mt-20"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -76,8 +101,7 @@ const Intro = () => {
           className=" group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
           onClick={() => {
             setTimeOfLastClick(Date.now());
-            setActiveSelection('Contact')
-            
+            setActiveSelection("Contact");
           }}
         >
           Contact Me here{" "}
