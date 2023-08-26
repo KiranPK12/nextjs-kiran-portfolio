@@ -64,10 +64,10 @@ const Intro = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I&apos;m Kiran.</span> I&apos;m a{" "}
-        <span className="font-bold">Full-stack developer.</span>{" "}
-        <span className="font-bold"></span> I enjoy building{" "}
-        <span className="italic">web sites & web applications</span>. My focus
+        <span className="font-bold leading-6">Hello, I&apos;m Kiran.</span> I&apos;m a{" "}
+        <span className="font-bold leading-6">Full-stack developer.</span>{" "}
+        <span className="font-bold leading-6"></span> I enjoy building{" "}
+        <span className="italic leading-6">web sites & web applications</span>. My focus
         is
         <span className="underline"> React (Next.js)</span>.
       </motion.h1>
@@ -79,14 +79,14 @@ const Intro = () => {
           delay: 0.1,
         }}
       >
-        <p className="font-semibold tracking-wider ">Tech Stack :</p>
-        <BiLogoReact className="text-5xl text-[#61dbfb] hover:scale-[1.15] transition" />
-        <BiLogoTailwindCss className="text-5xl text-[#3490dc] hover:scale-[1.15] transition" />
-        <SiNextdotjs className="text-5xl dark:text-white hover:scale-[1.15]  transition" />
-        <BiLogoTypescript className="text-5xl text-[#007acc] hover:scale-[1.15] transition" />
-        <BiLogoMongodb className="text-5xl text-[#589636] hover:scale-[1.15] transition" />
-        <BsGit className="text-5xl text-[#f34f29] hover:scale-[1.15] transition" />
-        <BiLogoPostgresql className="text-5xl text-[#0064a5] hover:scale-[1.15] transition" />
+        <p className="md:font-semibold md:tracking-wider hidden ">Tech Stack :</p>
+        <BiLogoReact className="md:text-5xl text-[#61dbfb] hover:scale-[1.15] transition text-3xl" />
+        <BiLogoTailwindCss className="md:text-5xl text-[#3490dc] hover:scale-[1.15] transition text-3xl" />
+        <SiNextdotjs className="md:text-5xl dark:text-white hover:scale-[1.15]  transition text-3xl" />
+        <BiLogoTypescript className="md:text-5xl text-[#007acc] hover:scale-[1.15] transition text-3xl" />
+        <BiLogoMongodb className="md:text-5xl text-[#589636] hover:scale-[1.15] transition text-3xl" />
+        <BsGit className="md:text-5xl text-[#f34f29] hover:scale-[1.15] transition text-3xl" />
+        <BiLogoPostgresql className="md:text-5xl text-[#0064a5] hover:scale-[1.15] transition text-3xl" />
       </motion.div>
       <motion.div
         className="flex flex-col sm:flex-row gap-4 px-4 text-lg font-medium justify-center items-center mt-20"
