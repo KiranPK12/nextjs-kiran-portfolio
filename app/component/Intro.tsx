@@ -119,18 +119,18 @@ const Intro = () => {
 
         <div className="flex gap-4">
           <a
+            href="https://github.com/KiranPK12"
+            target="_blank"
+            className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 text-[1.35rem] outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60"
+          >
+            <FaGithubSquare />
+          </a>
+          <a
             href="#"
             target="_blank"
             className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60"
           >
             <BsLinkedin />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            className="bg-white p-4 flex items-center gap-2 rounded-full text-gray-700 text-[1.35rem] outline-none hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60"
-          >
-            <FaGithubSquare />
           </a>
         </div>
       </motion.div>
