@@ -23,10 +23,6 @@ export const links = [
     name: "Skills",
     hash: "#skills",
   },
-  // {
-  //   name: "Experience",
-  //   hash: "#experience",
-  // },
   {
     name: "Contact",
     hash: "#contact",
@@ -65,14 +61,14 @@ export const projectsData = [
     title: "Duolingo Clone",
     description:
       "AI powered Language Learning platform built using NextJS , SQL and Drizzle and many more Frameworks.",
-    tags: [ "Next.js", "SQL", "Tailwind", "Drizzle"],
+    tags: ["Next.js", "SQL", "Tailwind", "Drizzle"],
     imageUrl: rmtdevImg,
   },
   {
     title: "Event Management Platform",
     description:
       "Create  and Market you Event on our page. Event Management system built using NextJS , Convex and ShadCN UI ",
-    tags: ["TypeScript", "Next.js","Convex", "Shadcn"],
+    tags: ["TypeScript", "Next.js", "Convex", "Shadcn"],
     imageUrl: corpcommentImg,
   },
   {
