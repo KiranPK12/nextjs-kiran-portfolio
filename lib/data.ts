@@ -23,10 +23,10 @@ export const links = [
     name: "Skills",
     hash: "#skills",
   },
-  {
-    name: "Experience",
-    hash: "#experience",
-  },
+  // {
+  //   name: "Experience",
+  //   hash: "#experience",
+  // },
   {
     name: "Contact",
     hash: "#contact",
@@ -62,21 +62,21 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "Airbnb Clone",
+    title: "Duolingo Clone",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
-  },
-  {
-    title: "Food Ordering Ap",
-    description:
-      "Restaurant food ordering app. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Docker"],
+      "AI powered Language Learning platform built using NextJS , SQL and Drizzle and many more Frameworks.",
+    tags: [ "Next.js", "SQL", "Tailwind", "Drizzle"],
     imageUrl: rmtdevImg,
   },
   {
-    title: "Discord Clone",
+    title: "Event Management Platform",
+    description:
+      "Create  and Market you Event on our page. Event Management system built using NextJS , Convex and ShadCN UI ",
+    tags: ["TypeScript", "Next.js","Convex", "Shadcn"],
+    imageUrl: corpcommentImg,
+  },
+  {
+    title: "Word Analytics",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
     tags: ["React", "Next.js", "SQL", "Tailwind", "WebSocket.io"],
@@ -97,11 +97,10 @@ export const skillsData = [
   "Prisma",
   "MongoDB",
   "Docker",
-  "GraphQL",
-  "Jenkins",
+  "Drizzle",
+  "Convex",
   "Express",
   "PostgreSQL",
   "Python",
-
   "Framer Motion",
 ] as const;
